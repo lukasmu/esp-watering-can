@@ -8,8 +8,6 @@
     "build": "webpack --mode=production",
     "lint": "eslint \"./**/*.js\""
   },
-  "author": "Johannes",
-  "license": "ISC",
   "devDependencies": {
     "@babel/core": "^7.9.0",
     "@babel/preset-env": "^7.9.5",

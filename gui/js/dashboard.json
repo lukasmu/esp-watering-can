@@ -1,3 +1,30 @@
 [
-    
+    {
+        "name": "tankLevel",
+        "label": "Tank water level (in mm)",
+        "type": "int16_t",
+        "direction": "display",
+        "display": "graph",
+        "xaxis": 120
+    },
+    {
+        "name": "moistureValue",
+        "label": "Moisture sensor value",
+        "type": "uint16_t",
+        "direction": "display"
+    },
+    {
+        "name": "moistureValuePercent",
+        "label": "Moisture sensor value (in %)",
+        "type": "uint16_t",
+        "direction": "display",
+        "display": "graph",
+        "xaxis": 120
+    },
+    {
+        "name": "pumpingStatus",
+        "label": "Pump status",
+        "type": "bool",
+        "direction": "display"
+    }
 ]

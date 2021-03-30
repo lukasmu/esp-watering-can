@@ -1,13 +1,12 @@
 import React, { useState, useEffect } from "react";
 import ReactDOM from "react-dom";
 import {BrowserRouter, Switch, Route, NavLink} from "react-router-dom";
-import { Box } from "react-feather";
+import { CloudDrizzle } from "react-feather";
 
 import {GlobalStyle, Menu, Header, Page, Hamburger} from "./comp/UiComponents";
 import { WifiPage } from "./comp/WifiPage";
 import { ConfigPage } from "./comp/ConfigPage";
 import { DashboardPage } from "./comp/DashboardPage";
-import { FilePage } from "./comp/FilePage";
 import { FirmwarePage } from "./comp/FirmwarePage";
 
 import { bin2obj } from "./functions/configHelpers";
@@ -64,21 +63,19 @@ function Root() {
     }
 
     const projectName = configData["projectName"] || Config.find(entry => entry.name === "projectName") ? Config.find(entry => entry.name === "projectName").value : "ESP8266";
-    const projectVersion = configData["projectVersion"] || Config.find(entry => entry.name === "projectVersion") ? Config.find(entry => entry.name === "projectVersion").value : "";
 
     return <><GlobalStyle />
 
         <BrowserRouter>
 
             <Header>
-                <h1><Box style={{verticalAlign:"-0.1em"}} /> {projectName} {projectVersion}</h1>
+                <h1><CloudDrizzle style={{verticalAlign:"-0.1em"}} />{projectName}</h1>
 
                 <Hamburger onClick={() => setMenu(!menu)} />
                 <Menu className={menu ? "" : "menuHidden"}>
                     <li><NavLink onClick={() => setMenu(false)} exact to="/">{loc.titleWifi}</NavLink></li>
                     <li><NavLink onClick={() => setMenu(false)} exact to="/dashboard">{loc.titleDash}</NavLink></li>
                     <li><NavLink onClick={() => setMenu(false)} exact to="/config">{loc.titleConf}</NavLink></li>
-                    <li><NavLink onClick={() => setMenu(false)} exact to="/files">{loc.titleFile}</NavLink></li>
                     <li><NavLink onClick={() => setMenu(false)} exact to="/firmware">{loc.titleFw}</NavLink></li>
                 </Menu>
 
@@ -86,9 +83,6 @@ function Root() {
         
             <Page>
                 <Switch>
-                    <Route exact path="/files">
-                        <FilePage API={url} />
-                    </Route>
                     <Route exact path="/config">
                         <ConfigPage API={url} 
                             configData={configData}

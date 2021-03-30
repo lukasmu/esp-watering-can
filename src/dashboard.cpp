@@ -35,11 +35,11 @@ void dashboard::onWsEvent(AsyncWebSocket *server, AsyncWebSocketClient *client, 
     /* initialize new client */
     if (type == WS_EVT_CONNECT)
     {
-        Serial.println("New WS client");
+        Serial.println("New websocket client");
     }
     else if (type == WS_EVT_DISCONNECT)
     {
-        Serial.println("Lost WS client");
+        Serial.println("Lost websocket client");
     }
 }
 

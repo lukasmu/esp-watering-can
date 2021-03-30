@@ -51,6 +51,7 @@ export const GlobalStyle = createGlobalStyle`
         width:0.9em;
         height:0.9em;
         vertical-align: -0.05em;
+        margin-right: 0.5em;
     }
 
     label {
@@ -184,6 +185,7 @@ export const Menu = styled.ul`
         width:100%;
         background-color:#444;
         margin:0px -1em;
+        margin-top:0.3rem;
         padding:0em 1em;    
 
         a {

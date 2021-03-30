@@ -32,6 +32,7 @@ void WifiManager::begin(char const *apName)
     if (WiFi.SSID() != "")
     {
         //trying to fix connection in progress hanging
+        Serial.println(PSTR("Connecting to stored WiFi details..."));
         ETS_UART_INTR_DISABLE();
         wifi_station_disconnect();
         ETS_UART_INTR_ENABLE();
@@ -41,13 +42,15 @@ void WifiManager::begin(char const *apName)
     if (WiFi.waitForConnectResult() == WL_CONNECTED)
     {
         //connected
-        Serial.println(PSTR("Connected to stored WiFi details"));
+        Serial.println(PSTR("Connected to stored WiFi details."));
+        Serial.println("ESP IP address:");
         Serial.println(WiFi.localIP());
     }
     else
     {
         //captive portal
         startCaptivePortal(captivePortalName);
+        Serial.println(PSTR("Could not connect to WiFi based on stored WiFi details. Started captive portal."));
     }
 }
 
@@ -66,7 +69,7 @@ void WifiManager::forget()
     //make EEPROM empty
     storeToEEPROM();
 
-    Serial.println(PSTR("Requested to forget WiFi. Started Captive portal."));
+    Serial.println(PSTR("Requested to forget WiFi. Started captive portal."));
 }
 
 //function to request a connection to new WiFi credentials

@@ -1,10 +1,18 @@
 [
     {
         "name": "projectName",
-        "label": "Project Name",
+        "label": "Project name",
         "type": "char",
         "length": 32,
-        "value": "ESP8266 IoT Framework"
+        "value": "ESP 8266 Watering Can"
+    },
+    {
+        "name": "projectVersion",
+        "label": "Project version",
+        "type": "char",
+        "length": 10,
+        "value": "0.1.0",
+        "disabled": true
     },
     {
         "name": "language",        
@@ -12,5 +20,91 @@
         "length": 3,
         "value": "en",
         "hidden": true
+    },
+    {
+        "name": "tankDepth",
+        "label": "Water tank depth (measured from ultrasonic sensor, in mm)",
+        "type": "uint16_t",
+        "min": 20,
+        "max": 4000,
+        "step": 1,
+        "value": 200
+    },
+    {
+        "name": "tankLevelNotification",
+        "label": "Tank water level at which notification is dispatched (in mm)",
+        "type": "uint8_t",
+        "min": 0,
+        "max": 255,
+        "step": 1,
+        "value": 50
+    },
+    {
+        "name": "tankLevelMin",
+        "label": "Tank water level required for pumping (in mm)",
+        "type": "uint8_t",
+        "min": 0,
+        "max": 255,
+        "step": 1,
+        "value": 20
+    },
+    {
+        "name": "moistureMin",
+        "label": "Moisture sensor value for water",
+        "type": "uint16_t",
+        "min": 0,
+        "max": 1023,
+        "step": 1,
+        "value": 300
+    },
+    {
+        "name": "moistureMax",
+        "label": "Moisture sensor value for dry air",
+        "type": "uint16_t",
+        "min": 0,
+        "max": 1023,
+        "step": 1,
+        "value": 800
+    },
+    {
+        "name": "moistureThreshold",
+        "label": "Moisture sensor threshold required for pumping",
+        "type": "uint16_t",
+        "min": 0,
+        "max": 1023,
+        "step": 1,
+        "value": 500
+    },
+    {
+        "name": "pumpingTime",
+        "label": "Time that pump is switched on (in s)",
+        "type": "uint8_t",
+        "min": 0,
+        "max": 255,
+        "step": 1,
+        "value": 3
+    },
+    {
+        "name": "pumpingPause",
+        "label": "Time that pump is switched off (in s)",
+        "type": "uint8_t",
+        "min": 0,
+        "max": 255,
+        "step": 1,
+        "value": 30
+    },
+    {
+        "name": "webhookTankNotification",
+        "label": "Tank notification webhook",
+        "type": "char",
+        "length": 255,
+        "value": ""
+    },
+    {
+        "name": "webhookTankEmpty",
+        "label": "Tank empty webhook",
+        "type": "char",
+        "length": 255,
+        "value": ""
     }
 ]
