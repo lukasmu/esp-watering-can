@@ -29,3 +29,10 @@ jobs:
       run: pio lib -g install 1
     - name: Run PlatformIO
       run: pio run
+    - name: Release
+      uses: softprops/action-gh-release@v1
+      if: startsWith(github.ref, 'refs/tags/')
+      with:
+        files: .pio/build/d1_mini/firmware.bin
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
