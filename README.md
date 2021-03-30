@@ -12,6 +12,7 @@ A few features that can still be implemented are listed below.
 - Log humidity/water level data
 - Send the ESP to sleep after one loop to allow using it on battery
 - At a factory reset function (using a button so that you can disconnect from a WiFi without being in that network)
+- Add images and further explanations to this repository
 
 ## Changelog
 
