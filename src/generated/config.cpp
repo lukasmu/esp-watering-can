@@ -1,12 +1,12 @@
 #include <Arduino.h>
 #include "config.h"
 
-uint32_t configVersion = 3915775537; //generated identifier to compare config with EEPROM
+uint32_t configVersion = 387598215; //generated identifier to compare config with EEPROM
 
 const configData defaults PROGMEM =
 {
 	"ESP 8266 Watering Can",
-	"0.1.0",
+	"0.2.1",
 	"en",
 	200,
 	50,
