@@ -16,7 +16,7 @@
     {
         "name": "moistureValuePercent",
         "label": "Moisture sensor value (in %)",
-        "type": "uint16_t",
+        "type": "int16_t",
         "direction": "display",
         "display": "graph",
         "xaxis": 120
